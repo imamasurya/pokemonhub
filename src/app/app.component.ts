@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PokemonService } from './api/pokemon.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'pokemonhub';
+  
+  getPokemons$ = this.pokemonService.getPokemons();
+
+  constructor(private pokemonService: PokemonService) {}
+
 }
